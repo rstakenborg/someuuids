@@ -2,6 +2,23 @@
 
 Reserves a pool of UUIDs for a local user to then author content without conflicts
 
+## Usage
+
+Opening the project in VSCode, you now have a Task called "Generate New Entity". To use it:
+
+- CTRL+P to bring up the _palette_
+- Select "Run Task"
+- Select "Generate New Entity"
+- Follow the prompts to get a new entity
+
+### UUID generation
+
+The getuuid script provided stores preallocated IDs in localid.json. When you run out, it automatically replenishes, and updates the remoteid file so that other users will not preallocate the same IDs
+
+## Extending
+
+Snippets have a ton of functionality, including UUIDs, date/timestampe etc.
+
 [Snippet syntax](https://manual.macromates.com/en/snippets)
 
 ### remoteid
@@ -37,3 +54,10 @@ Code snippets actually support UUID A Version 4 UUID, so if we do not actually n
 ### behavior
 
 We work backwards from the preallocated chunk highest ID to the lowest, it just makes the code flow a bit nicer
+
+## Future Considerations
+
+- VSCode allows for keybindings which could make for a really quick option. Given the team technical skills, keyboard shortcuts may be appreciated
+- A prettify/format would go a long way with more complex snippets
+- Really complex snippets can be added as separate files instead of inline as currently done
+- insertSnippet command used to take a dict of arguments to allow a specific snippet to be provided, but this seems to have changed. We may be able to reduce the prompts for the user

@@ -19,4 +19,5 @@ $localcontent = (Get-Content $local | Out-String | ConvertFrom-Json)
 $newid = $localcontent.pool + $localcontent.counter
 $localcontent.counter -= 1
 $localcontent | ConvertTo-Json | Out-File $local
-write-host $newid
+
+Write-Output $newid

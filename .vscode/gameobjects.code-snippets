@@ -20,8 +20,11 @@
 		"prefix": "Entity",
 		"body": [
 			"{",
-			"  \"entityid\": \"$TM_SELECTED_TEXT\"",
+			"  \"entityid\": \"$TM_SELECTED_TEXT\",",
+			"  \"entityname\": \"$TM_FILENAME_BASE\",",
+			"  \"metadata\": {\"version\": 1.0, \"created\": \"$CURRENT_SECONDS_UNIX\"}",
 			"}"
 		]
-	}
+	},
+	// Other snippets that use UUID or other variables can do the same see https://code.visualstudio.com/docs/editor/userdefinedsnippets
 }

@@ -12,10 +12,10 @@ Opening the project in VSCode, you now have a Task called "Generate New Entity".
 - Select "Generate New Entity"
   ![Select Generate New Entity](/screenshots/generatenewentity.png?raw=true "Select the Task")
 - Follow the prompts to get a new entity
-  ![Name your entity](/screenshots/runtask.png?raw=true "Name the entity using the prompt")
-  ![Select the snippet to prefill](/screenshots/runtask.png?raw=true "Select Entity Snippet")
+  ![Name your entity](/screenshots/nameentity.png?raw=true "Name the entity using the prompt")
+  ![Select the snippet to prefill](/screenshots/selectsnippet.png?raw=true "Select Entity Snippet")
 - Review your new file
-  ![Review and continue to edit the Entity](/screenshots/runtask.png?raw=true "Review the results")
+  ![Review and continue to edit the Entity](/screenshots/reviewchange.png?raw=true "Review the results")
 
 ### UUID generation
 

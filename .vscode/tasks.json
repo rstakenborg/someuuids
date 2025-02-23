@@ -5,13 +5,11 @@
   "tasks": [
     {
       "label": "New Entity File",
-
-      // assuming your folder name isn't static
-      "command": "powershell ./getuuid.ps1 >${newfilename}.json;code --reuse-window ${newfilename}.json",
+      "command": "powershell ./getuuid.ps1 | Out-File -FilePath ${input:newfilename}.json -NoNewline;code --reuse-window ${input:newfilename}.json",
       "type": "shell",
       "problemMatcher": [],
+      "hide": true,
       "presentation": {
-        // terminal handling which you may not care about and could delete
         "echo": false,
         "reveal": "silent",
         "focus": false,
@@ -23,16 +21,20 @@
     },
     {
       "label": "Select ID",
-      "command": "${command:editor.action.selectAll}"
+      "command": "${command:editor.action.selectAll}",
+      "hide": true
     },
     {
       "label": "Entity Boilerplate",
       "command": "${command:editor.action.insertSnippet}",
-      "args": ["{\"name\": \"Entity\"}"]
+      "args": ["{\"name\": \"Entity\"}"],
+      "hide": true
     },
     {
       "label": "Generate New Entity",
-      "dependsOn": ["New Entity File", "Select ID", "Entity Boilerplate"]
+      "dependsOrder": "sequence",
+      "dependsOn": ["New Entity File", "Select ID", "Entity Boilerplate"],
+      "problemMatcher": []
     }
   ],
   "inputs": [

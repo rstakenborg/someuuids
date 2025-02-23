@@ -1,0 +1,46 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "New Entity File",
+
+      // assuming your folder name isn't static
+      "command": "powershell ./getuuid.ps1 >${newfilename}.json;code --reuse-window ${newfilename}.json",
+      "type": "shell",
+      "problemMatcher": [],
+      "presentation": {
+        // terminal handling which you may not care about and could delete
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "promptOnClose": false
+    },
+    {
+      "label": "Select ID",
+      "command": "${command:editor.action.selectAll}"
+    },
+    {
+      "label": "Entity Boilerplate",
+      "command": "${command:editor.action.insertSnippet}",
+      "args": ["{\"name\": \"Entity\"}"]
+    },
+    {
+      "label": "Generate New Entity",
+      "dependsOn": ["New Entity File", "Select ID", "Entity Boilerplate"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "newfilename",
+      "description": "name of the new entity",
+      "default": "new_entity_change_me",
+      "type": "promptString"
+    }
+  ]
+}

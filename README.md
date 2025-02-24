@@ -51,7 +51,7 @@ This system could mature into a UUID service at some point, but the risk of addi
 
 #### Limitations
 
-There is technically an artificial restriction in that VCS must be avaialble at the time of pool allocation, but this also means that Sean can work offline so long as he does not run through the pool before reconnecting.
+There is technically an artificial restriction in that VCS must be avaialble at the time of pool allocation, but this also means that designers can work offline so long as he does not run through the pool before reconnecting.
 
 ### Linear UUIDs
 

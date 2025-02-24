@@ -43,23 +43,23 @@ Calling getuuid.ps1 will pop the next ID from your local pool and print it to st
 
 ### Using a pool of IDs
 
-Allocating a local pool simplifies how often the source of truth (in this case a shared, version-controlled file) may be modified, which reduces the potential for conflicts. This also reduces the complexity of the more common task of using the IDs, in particular reducing the time it takes to reserve one when the artist is focused on creating an asset, and does not want to context-switch.
+Allocating a local pool simplifies how often the source of truth (in this case a shared, version-controlled file) may be modified, which reduces the potential for conflicts. This also reduces the complexity of the more common task of using the IDs, in particular reducing the time it takes to reserve one when the artist is focused on creating an asset, and does not want to context-switch. A local pool of unique IDs also allows for limited unconnected work rather than a connection being an artificial barrier required for creating new objects.
 
 #### Limitations
 
-For single-project use this UUID method should be fine, but over many projects it may make sense to reset, reserve or pre-allocate certain ranges.
+For single-project use this UUID method should be fine, but over many projects it may make sense to reset, reserve or pre-allocate certain ranges to specific projects, entity types, sources, departments or other categorizations.
 
 ### Using A file to track
 
-This system could mature into a UUID service at some point, but the risk of adding infrastructure and additional tribal knowledge of that system is currently outweighed by getting something in
+This system could mature into a UUID service at some point, but the risk of adding infrastructure and additional tribal knowledge of that system is currently outweighed by getting something in working order. The pooling process should be maintained regardless of infrastructure, and infrastructure should remain transparent to the interface of getting a unique ID.
 
 #### Limitations
 
-There is technically an artificial restriction in that VCS must be avaialble at the time of pool allocation, but this also means that designers can work offline so long as he does not run through the pool before reconnecting.
+There is technically an artificial restriction in that VCS must be avaialble at the time of pool allocation, but this also means that designers can work offline so long as they do not run through their pool before reconnecting.
 
 ### Linear UUIDs
 
-Code snippets actually support UUID A Version 4 UUID, so if we do not actually need to track burnt UUIDs this could be a great option. In lieu of that, chunking UUIDs based on a 64 bit int is fine.
+Code snippets actually support Version 4 UUID, so if we do not actually need to track burnt UUIDs this could be an option. In lieu of that, chunking UUIDs based on a 64 bit int is fine.
 
 ### behavior
 

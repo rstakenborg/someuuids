@@ -29,11 +29,15 @@ Snippets have a ton of functionality, including UUIDs, date/timestampe etc.
 
 ### remoteid
 
-Tracking the highest ID used on the project. If editing this must be checked-in
+Tracking the highest ID used on the project. If edited this must be checked-in to communicate to other members that the IDs have been allocated.
 
-### nextid
+### localid
 
-Pre-allocated ID for your next asset. Decrement this by 1 as you use the IDs. Call getuuid.ps1 to replenish if this drops to 0
+Information about your pre-allocated "pool" of IDs. If the "counter" drops below 1, we allocate a new range and track the updated global counter in remoteid.
+
+### getuuid
+
+Calling getuuid.ps1 will pop the next ID from your local pool and print it to stdout. If no more local IDs are allocated, it will edit remoteid for you and allocate the next available block.
 
 ## Decisions
 
